@@ -13,6 +13,10 @@
   <script type="text/javascript" src="godb.js"></script>
 
   <style type="text/css">
+    body {
+      background: #F8F8F8;
+    }
+
     h2 {
       margin-top: 1em;
       margin-bottom: 0.25em;
@@ -35,9 +39,22 @@
       margin: 0;
     }
 
+    .oses .windows, .oses .mac, .oses .linux { padding-left: 22px; }
+    .oses .windows {
+      background: url(img/windows.png) no-repeat left bottom;
+    }
+    .oses .mac {
+      background: url(img/mac.png) no-repeat 2px top;
+    }
+    .oses .linux {
+      background: url(img/linux.png) no-repeat 2px top;
+    }
+
     .contents {
-      background: #CCC;
+      background: #666;
       border-radius: 5px;
+      border-top: 1px solid #FFF;
+      border-bottom: 1px solid #FFF;
       box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
     }
 
@@ -46,18 +63,25 @@
     }
 
     .contents li {
-      color: #FFF;
-      background: #000;
-      border-radius: 3px;
       padding: 5px 8px;
       margin: 0 5px 10px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+      border: 1px solid #efefef;
+      border-radius: 3px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+      padding: 4px 15px;
+      background-color: #FFFFFF;
+      background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
+      background-image: -o-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* Opera 11.10+ */
+      background-image: -ms-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
+      background-image: linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .contents .bonus {
       padding-left: 10px;
-      text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5);
-      color: #333;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+      color: #FFF;
     }
 
     .on-now {
@@ -115,7 +139,7 @@
       <div class="grid_8 contents">
         <ul>
           <% _.each(bundle.Games.split("\n"), function(game) {%>
-          <li class="<%- game.toLowerCase() %>"><%- game %></li>
+          <li class="<%- game.toLowerCase().replace(/[^a-z0-9]/g, '-') %>"><%- game %></li>
           <% }); %>
         </ul>
         <% if (bundle.Bonus) { %>
