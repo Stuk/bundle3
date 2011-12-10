@@ -27,6 +27,10 @@
       margin: 0;
     }
 
+    .dates {
+      margin-bottom: 10px;
+    }
+
     .oses, .downloads, .contents ul {
       list-style: none;
       padding: 0;
@@ -39,15 +43,28 @@
       margin: 0;
     }
 
-    .oses .windows, .oses .mac, .oses .linux { padding-left: 22px; }
+    .oses .windows, .oses .mac, .oses .linux,
+    .downloads .direct, .downloads .steam, .downloads .desura
+    { padding-left: 22px; }
+
     .oses .windows {
-      background: url(img/windows.png) no-repeat left bottom;
+      background: url(img/windows.png) no-repeat left 1px;
     }
     .oses .mac {
       background: url(img/mac.png) no-repeat 2px top;
     }
     .oses .linux {
       background: url(img/linux.png) no-repeat 2px top;
+    }
+
+    .downloads .direct {
+      background: url(img/direct.png) no-repeat 2px top;
+    }
+    .downloads .steam {
+      background: url(img/steam.png) no-repeat 2px top;
+    }
+    .downloads .desura {
+      background: url(img/desura.png) no-repeat left top;
     }
 
     .contents {
@@ -92,6 +109,14 @@
       font-size: 0.75em;
       text-transform: uppercase;
     }
+
+    #loading {
+      background: rgba(0, 0, 0, 0.6);
+      color: #EEE;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 1.5em;
+    }
   </style>
 </head>
 <body>
@@ -104,6 +129,10 @@
       <a href="#">More</a>
       <a href="#">Submit new bundle</a>
     </p>
+
+    <div id="loading" class="push_5 grid_2">
+      Loading...
+    </div>
 
     <script type="text/html" id="user_tmpl">
       <% _.each(Bundles, function(bundle) { %>
@@ -166,6 +195,7 @@
     var url = "https://docs.google.com/spreadsheet/ccc?key=0Ar35F5WUAjXedDY4R0VTS05UcWhaM081eklIclN0VFE&gid=0";
     GoDB.data(url, function(data) {
       GoDB.template({Bundles: data.reverse()});
+      document.getElementById("loading").style.display = "none";
     });
   </script>
 </body>
