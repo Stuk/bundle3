@@ -83,7 +83,7 @@
       padding: 5px 8px;
       margin: 0 5px 10px 0;
 
-      border: 1px solid #efefef;
+      border: 1px solid rgba(255, 255, 255, 0.8);
       border-radius: 3px;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
       padding: 4px 15px;
@@ -135,10 +135,10 @@
     </div>
 
     <script type="text/html" id="user_tmpl">
-      <% _.each(Bundles, function(bundle) { %>
+      <% _.each(Bundles.reverse(), function(bundle) { %>
 
       <h2 class="grid_12"><a href="<%- bundle.URL %>"><%- bundle.Name %></a></h2>
-      <div class="grid_4">
+      <div class="grid_4 info">
         <p class="dates">
           <%- formatDate(bundle['Date from']) %> -
           <%- formatDate(bundle['Date to']) %>
@@ -192,9 +192,9 @@
       return date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
     }
 
-    var url = "https://docs.google.com/spreadsheet/ccc?key=0Ar35F5WUAjXedDY4R0VTS05UcWhaM081eklIclN0VFE&gid=0";
-    GoDB.data(url, function(data) {
-      GoDB.template({Bundles: data.reverse()});
+    var url = "https://docs.google.com/spreadsheet/ccc?key=0Ar35F5WUAjXedDY4R0VTS05UcWhaM081eklIclN0VFE";
+    GoDB.data({Bundles: {url: url}, Games: {url: url, index: 1}}, function(err, data) {
+      GoDB.template(data);
       document.getElementById("loading").style.display = "none";
     });
   </script>
