@@ -3,154 +3,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Bundle bundle bundle — All the indie game bundles</title>
 
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/text.css">
-  <link rel="stylesheet" href="css/960_12_col.css">
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  <link rel="stylesheet" href="css/text.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  <link rel="stylesheet" href="css/960_12_col.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="underscore.js"></script>
   <script type="text/javascript" src="godb.js"></script>
-
-  <style type="text/css">
-    body {
-      background: #F8F8F8;
-    }
-
-    h2 {
-      margin-top: 1em;
-      margin-bottom: 0.25em;
-    }
-
-    h3 {
-      font-size: 1em;
-      margin: 0;
-    }
-
-    .dates {
-      margin-bottom: 10px;
-    }
-
-    .oses, .downloads, .contents ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .oses li, .downloads li, .contents li {
-      display: inline-block;
-      padding: 0;
-      margin: 0;
-    }
-
-    .oses .windows, .oses .mac, .oses .linux,
-    .downloads .direct, .downloads .steam, .downloads .desura
-    { padding-left: 22px; }
-
-    .oses .windows {
-      background: url(img/windows.png) no-repeat left 1px;
-    }
-    .oses .mac {
-      background: url(img/mac.png) no-repeat 2px top;
-    }
-    .oses .linux {
-      background: url(img/linux.png) no-repeat 2px top;
-    }
-
-    .downloads .direct {
-      background: url(img/direct.png) no-repeat 2px top;
-    }
-    .downloads .steam {
-      background: url(img/steam.png) no-repeat 2px top;
-    }
-    .downloads .desura {
-      background: url(img/desura.png) no-repeat left top;
-    }
-
-    .contents {
-      background: #666;
-      border-radius: 5px;
-      border-top: 1px solid #FFF;
-      border-bottom: 1px solid #FFF;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .contents ul {
-      padding: 10px 5px 0 10px;
-    }
-
-    .contents li {
-      position: relative;
-      padding: 5px 8px;
-      margin: 0 5px 10px 0;
-
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 3px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-      padding: 4px 15px;
-      background-color: #FFFFFF;
-      background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
-      background-image: -o-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* Opera 11.10+ */
-      background-image: -ms-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
-      background-image: linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
-      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
-
-      z-index: 4;
-    }
-
-    .contents li a {
-      color: #000;
-      text-decoration: none;
-    }
-
-/*
-Used to display a info box beneath the game. If more info is added this
-may become useful in the future.
-    .contents li.game:hover {
-      color: #FFF;
-      text-shadow: none;
-      z-index: 20;
-    }
-
-    .contents li:hover .game_info {
-      display: block;
-    }
-
-    .contents .game_info {
-      position: absolute;
-      display: none;
-
-      background: rgba(0, 0, 0, 0.8);
-      top: -6px;
-      left: -5px;
-      width: 100%;
-      padding: 3em 5px 5px 5px;
-      border-radius: 3px;
-      z-index: -1;
-    }
-*/
-    .contents .bonus {
-      padding-left: 10px;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
-      color: #FFF;
-    }
-
-    .on-now {
-      color: #FFF;
-      border-radius: 2px;
-      padding: 3px 3px 2px 3px;
-      background: #44B03C;
-      font-size: 0.75em;
-      text-transform: uppercase;
-    }
-
-    #loading {
-      background: rgba(0, 0, 0, 0.6);
-      color: #EEE;
-      border-radius: 3px;
-      text-align: center;
-      font-size: 1.5em;
-    }
-  </style>
 </head>
 <body>
 
@@ -237,6 +97,7 @@ may become useful in the future.
         document.getElementById("loading").innerHTML = err;
         return;
       }
+      // Map the game names to their data
       data.game_index = {};
       _.each(data.Games, function(game, index) {
         data.game_index[game.Name] = game;
