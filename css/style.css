@@ -33,23 +33,23 @@ h3 {
 { padding-left: 22px; }
 
 .oses .windows {
-  background: url(img/windows.png) no-repeat left 1px;
+  background: url(../img/windows.png) no-repeat left 1px;
 }
 .oses .mac {
-  background: url(img/mac.png) no-repeat 2px top;
+  background: url(../img/mac.png) no-repeat 2px top;
 }
 .oses .linux {
-  background: url(img/linux.png) no-repeat 2px top;
+  background: url(../img/linux.png) no-repeat 2px top;
 }
 
 .downloads .direct {
-  background: url(img/direct.png) no-repeat 2px top;
+  background: url(../img/direct.png) no-repeat 2px top;
 }
 .downloads .steam {
-  background: url(img/steam.png) no-repeat 2px top;
+  background: url(../img/steam.png) no-repeat 2px top;
 }
 .downloads .desura {
-  background: url(img/desura.png) no-repeat left top;
+  background: url(../img/desura.png) no-repeat left top;
 }
 
 .contents {
@@ -86,6 +86,10 @@ h3 {
 .contents li a {
   color: #000;
   text-decoration: none;
+}
+
+.contents li a:hover {
+  text-decoration: underline;
 }
 
 /*
