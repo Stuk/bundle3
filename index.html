@@ -88,6 +88,7 @@
   <script type="text/javascript">
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     function formatDate(date) {
+      if (!date) return "Unknown";
       return date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
     }
 
