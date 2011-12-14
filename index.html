@@ -12,7 +12,7 @@
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="underscore.js"></script>
-  <script type="text/javascript" src="godb.js"></script>
+  <script type="text/javascript" src="gooss.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
       <a href="https://docs.google.com/spreadsheet/viewform?formkey=dC1tVlplZC0tc2M1cjR6cHNfeGptWmc6MQ">Submit new bundle</a> &bullet;
       <a href="https://docs.google.com/spreadsheet/ccc?key=0Ar35F5WUAjXedDY4R0VTS05UcWhaM081eklIclN0VFE">View data</a> &bullet;
       <a href="https://spreadsheets.google.com/feeds/list/0Ar35F5WUAjXedDY4R0VTS05UcWhaM081eklIclN0VFE/od6/public/basic?hl=en_US&alt=rss">RSS feed</a> &bullet;
-      Powered by <a href="">GoDB</a>
+      Powered by <a href="https://github.com/Stuk/gooss">gooss</a>
     </p>
 
     <div id="loading" class="push_5 grid_2 clearfix">
@@ -103,7 +103,7 @@
     }
 
     var url = "https://docs.google.com/spreadsheet/ccc?key=0Ar35F5WUAjXedDY4R0VTS05UcWhaM081eklIclN0VFE";
-    GoDB.data({Bundles: {url: url}, Games: {url: url, index: 1}}, function(err, data) {
+    gooss.data({Bundles: {url: url}, Games: {url: url, index: 1}}, function(err, data) {
       if (err) {
         document.getElementById("loading").innerHTML = err;
         return;
@@ -113,7 +113,7 @@
       _.each(data.Games, function(game, index) {
         data.game_index[game.Name] = game;
       });
-      GoDB.template(data);
+      gooss.template(data);
       document.getElementById("loading").style.display = "none";
     });
   </script>
