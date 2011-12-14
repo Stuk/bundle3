@@ -41,7 +41,7 @@ h3 {
 }
 
 .oses .windows, .oses .mac, .oses .linux,
-.downloads .direct, .downloads .steam, .downloads .desura
+.downloads .direct, .downloads .steam, .downloads .desura, .downloads .get
 { padding-left: 22px; }
 
 .oses .windows {
@@ -62,6 +62,9 @@ h3 {
 }
 .downloads .desura {
   background: url(../img/desura.png) no-repeat left top;
+}
+.downloads .get {
+  background: url(../img/getgames.png) no-repeat 2px top;
 }
 
 .contents {
