@@ -2,6 +2,18 @@ body {
   background: #F8F8F8;
 }
 
+h1 {
+  font-size: 5em;
+  letter-spacing: -0.1em;
+  color: #FFF;
+  text-shadow: 0 0 20px #000;
+
+  -webkit-transform: rotate(353deg);
+  -moz-transform: rotate(353deg);
+  -o-transform: rotate(353deg);
+  transform: rotate(353deg);
+}
+
 h2 {
   margin-top: 1em;
   margin-bottom: 0.25em;
