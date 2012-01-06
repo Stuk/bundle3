@@ -6,13 +6,17 @@ h1 {
   font-size: 5em;
   letter-spacing: -0.1em;
   color: #FFF;
-  text-shadow: 0 0 20px #000;
+  text-shadow: 0 0 20px rgba(0,0,0,0.3);
 
   -webkit-transform: rotate(353deg);
   -moz-transform: rotate(353deg);
   -o-transform: rotate(353deg);
   transform: rotate(353deg);
 }
+
+.a { color: #5E16B7; }
+.b { color: #9202C6; }
+.c { color: #0286C6; }
 
 h2 {
   margin-top: 1em;
@@ -25,7 +29,7 @@ h3 {
 }
 
 a {
-  color: #02AFC6;
+  color: #EA2326;
 }
 
 a:hover {
