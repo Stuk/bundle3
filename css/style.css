@@ -24,6 +24,14 @@ h3 {
   margin: 0;
 }
 
+a {
+  color: #02AFC6;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .dates {
   margin-bottom: 10px;
 }
